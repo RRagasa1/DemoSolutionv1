@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "Website\", "{2CAEA2B5-F49F-4395-A334-5A0162DC1656}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5.2"
+		ProjectReferences = "{a3c40cfa-95a2-488e-9394-8b5484f30767}|ChinookSystem.dll;{cef912a2-abff-4235-b1b7-5014213bf8a9}|ChinookSystem.Data.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_13724"
 		Debug.AspNetCompiler.PhysicalPath = "Website\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_13724\"
@@ -25,13 +26,28 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Website", "Website\", "{2CA
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChinookSystem", "ChinookSystem\ChinookSystem.csproj", "{A3C40CFA-95A2-488E-9394-8B5484F30767}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChinookSystem.Data", "ChinookSystem.Data\ChinookSystem.Data.csproj", "{CEF912A2-ABFF-4235-B1B7-5014213BF8A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{2CAEA2B5-F49F-4395-A334-5A0162DC1656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2CAEA2B5-F49F-4395-A334-5A0162DC1656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CAEA2B5-F49F-4395-A334-5A0162DC1656}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CAEA2B5-F49F-4395-A334-5A0162DC1656}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{A3C40CFA-95A2-488E-9394-8B5484F30767}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3C40CFA-95A2-488E-9394-8B5484F30767}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3C40CFA-95A2-488E-9394-8B5484F30767}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3C40CFA-95A2-488E-9394-8B5484F30767}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEF912A2-ABFF-4235-B1B7-5014213BF8A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEF912A2-ABFF-4235-B1B7-5014213BF8A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEF912A2-ABFF-4235-B1B7-5014213BF8A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEF912A2-ABFF-4235-B1B7-5014213BF8A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
