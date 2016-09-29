@@ -32,6 +32,16 @@ namespace ChinookSystem.Data.Entities
         public int ArtistID { get; set; }
         public string Name { get; set; } 
 
-        //set up albums, tracks and mediatypes
+        //navigation properties for use by Linq
+        //use the DB ERD to determine the relationships
+
+        //these properties will be of type virtual 
+        //there are two types of navigation properties
+            //properties that point to "children" use ICollection<T> as the datatype
+            //properties that point to "parent" use ParentClassName as the datatype
+
+        public virtual ICollection<Album> Albums { get; set; } //parent to artist
+        public virtual ICollection<MediaType> MediaTypes { get; set; } //parent to artist
+
     }
 }
