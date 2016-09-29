@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+#region Additional Namespaces
+using System.Data.Entity;
+
+#endregion
+
+namespace ChinookSystem.DAL
+{
+    internal class ChinookContext
+    //Internal for security reasons
+    //access restricted to within the component library
+    //inherit DbContext for EntityFrameWork
+    {
+        //pass the connection string name to the DbContext using the :base() initializer
+
+        public ChinookContext() : base("ChinookDB")
+        {
+
+        }
+
+        //setup DbSet properties 
+
+        public DbSet<Artist> Artists { get; set; }
+        public DbSet<Album> Albums { get; set; }
+        public DbSet<Track> Tracks { get; set; }
+        public DbSet<MediaType> MediaTypes { get; set; }
+    }
+}
