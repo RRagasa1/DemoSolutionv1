@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 #region Additional Namespaces
 using System.Data.Entity;
+using ChinookSystem.Data.Entities;
 
 #endregion
 
 namespace ChinookSystem.DAL
 {
-    internal class ChinookContext
+    internal class ChinookContext: DbContext
     //Internal for security reasons
     //access restricted to within the component library
     //inherit DbContext for EntityFrameWork
