@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-#region Additional Namespaces
-using ChinookSystem.DAL;  //context class
-using ChinookSystem.Data.POCOs;   //POCOs classes
-using ChinookSystem.Data.Entities;  //entity class
-using System.ComponentModel;   //ODS
+#region Additonal Namespaces
+using System.ComponentModel; //ODS
+using ChinookSystem.Data.Entities;
+using ChinookSystem.Data.POCOs;
+using ChinookSystem.DAL;
 #endregion
 
 namespace ChinookSystem.BLL
@@ -16,37 +16,52 @@ namespace ChinookSystem.BLL
     [DataObject]
     public class ArtistController
     {
-        //dump the entire artist table
-        //this will use EntityFramework access
+        //dump the entire artist entity
+        //this will use Entity Framework access 
         //Entity classes will be used to define the data
-
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<Artist> Artist_ListAll()  //List<T> where T is class
+        public List<Artist> Artist_ListAll()
         {
-            //set up the transaction area
+            //set up transaction area
             using (var context = new ChinookContext())
             {
                 return context.Artists.ToList();
             }
-
         }
-        //return a list of Artist and all their albums
-        //this will use linq to Entity data access
+
+        //report a dataset containing data from
+        //   multiple entities
+        //this will use Linq to Entity access 
         //POCO classes will be used to define the data
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<ArtistAlbums> ArtistAlbums_Get()
         {
+            //set up transaction area
             using (var context = new ChinookContext())
             {
-                   var results = from x in context.Albums
-                                 where x.ReleaseYear == 2008
-                                 orderby x.Artist.Name, x.Title
-                                 select ArtistAlbums
-                                        {
-                                        Name = x.Artist.Name,
-                                        Title = x.Title};  //Name/Title are class property names
+                //when you bring your query from LinqPad
+                //to your program you must change the
+                //reference(s) to the data source
+
+                //you may also need to change your
+                //navigation referencing use in LinqPad
+                //to the navigation properties you stated
+                //in the Entity class definitions
+                var results = from x in context.Albums
+                              where x.ReleaseYear == 2008
+                              orderby x.Artist.Name, x.Title
+                              select new ArtistAlbums
+                              {
+                                  //Name and Title are POCO
+                                  //class property names
+                                  Name = x.Artist.Name,
+                                  Title = x.Title
+                              };
+                //the following requires the query data in memory
+                //.ToList()
+                //At this point the query will actually execute
+                return results.ToList();
             }
         }
-       
     }
 }

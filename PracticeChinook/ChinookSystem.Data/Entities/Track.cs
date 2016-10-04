@@ -26,7 +26,7 @@ namespace ChinookSystem.Data.Entities
         public int? Bytes { get; set; }
         public decimal UnitPrice { get; set; }
 
-        public virtual Album Albums { get; set; } //child to tracks
+        public virtual Album Album { get; set; } //child to tracks
 
         //others:
         //Genre - parent

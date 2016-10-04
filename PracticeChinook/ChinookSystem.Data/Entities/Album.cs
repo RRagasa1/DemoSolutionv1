@@ -23,7 +23,7 @@ namespace ChinookSystem.Data.Entities
         public int ReleaseYear { get; set; }
         public string ReleaseLabel { get; set; }
 
-        public virtual Artist Artists { get; set; } //child to album
+        public virtual Artist Artist { get; set; } //child to album
         public virtual ICollection<Track> Tracks { get; set; } //parent to album
     }
 }
