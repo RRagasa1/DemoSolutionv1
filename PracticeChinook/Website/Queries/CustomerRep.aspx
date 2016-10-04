@@ -11,7 +11,11 @@
             <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email"></asp:BoundField>
         </Columns>
     </asp:GridView>
-    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="RepresentitiveCustomers_Get" TypeName="ChinookSystem.BLL.CustomerController"></asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="RepresentitiveCustomers_Get" TypeName="ChinookSystem.BLL.CustomerController">
+        <SelectParameters>
+            <asp:Parameter Name="employeeid" Type="Int32"></asp:Parameter>
+        </SelectParameters>
+    </asp:ObjectDataSource>
  
     
 </asp:Content>

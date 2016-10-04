@@ -18,13 +18,12 @@ namespace ChinookSystem.BLL
     {
       
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<RepresentitiveCustomers> RepresentitiveCustomers_Get()
+        public List<RepresentitiveCustomers> RepresentitiveCustomers_Get(int employeeid)
         {
             using (var context = new ChinookContext())
             {
                 var results = from x in context.Customers
-                              where x.Employee.FirstName.Equals("Jane") &&
-                                  x.Employee.LastName.Equals("Peacock")
+                              where x.SupportRepId == employeeid
                               orderby x.LastName, x.FirstName
                               select new RepresentitiveCustomers
                               {
