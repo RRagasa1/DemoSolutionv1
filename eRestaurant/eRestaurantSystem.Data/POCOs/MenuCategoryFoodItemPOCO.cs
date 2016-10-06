@@ -9,8 +9,9 @@ namespace eRestaurantSystem.Data.POCOs
     public class MenuCategoryFoodItemPOCO
     {
         public int ItemID { get; set; }
-        public string Description { get; set; }
+        public string FoodDescription { get; set; }
         public decimal CurrentPrice { get; set; }
-        public int TImesServed { get; set; }
+        public int ItemsServed { get; set; }
+        public string MenuCategoryDescription { get; set; }
     }
 }
