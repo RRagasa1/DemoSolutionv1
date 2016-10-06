@@ -23,7 +23,7 @@ namespace eRestaurantSystem.Data.Entities
         public decimal UnitCost { get; set; }
         public string Notes { get; set; }
 
-        public virtual Items Item { get; set; }
+        public virtual Item Item { get; set; }
         public virtual Bill Bill { get; set; }
 
     }

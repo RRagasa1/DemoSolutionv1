@@ -13,7 +13,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace eRestaurantSystem.Data.Entities
 {
     [Table("Items")]
-    public class Items
+    public class Item
     {
         [Key]
         public int ItemID { get; set; }
