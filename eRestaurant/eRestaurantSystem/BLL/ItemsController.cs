@@ -32,7 +32,7 @@ namespace eRestaurantSystem.BLL
                                               select new FoodItemCounts
                                               {
                                                   ItemID = x.ItemID,
-                                                  FoodDescription = x.Description,
+                                                  Description = x.Description,
                                                   CurrentPrice = x.CurrentPrice,
                                                   ItemsServed = x.BillItems.Count()
                                               }).ToList()  //must convert to list

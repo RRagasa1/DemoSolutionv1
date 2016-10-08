@@ -20,7 +20,7 @@
                 <td>
                     <asp:Label Text='<%# Eval("ItemID") %>' runat="server" ID="ItemIDLabel" /></td>
                 <td>
-                    <asp:Label Text='<%# Eval("FoodDescription") %>' runat="server" ID="FoodDescriptionLabel" /></td>
+                    <asp:Label Text='<%# Eval("Description") %>' runat="server" ID="DescriptionLabel" /></td>
                 <td>
                     <asp:Label Text='<%# Eval("CurrentPrice") %>' runat="server" ID="CurrentPriceLabel" /></td>
                 <td>
@@ -38,7 +38,7 @@
                 <td>
                     <asp:TextBox Text='<%# Bind("ItemID") %>' runat="server" ID="ItemIDTextBox" /></td>
                 <td>
-                    <asp:TextBox Text='<%# Bind("FoodDescription") %>' runat="server" ID="FoodDescriptionTextBox" /></td>
+                    <asp:TextBox Text='<%# Bind("Description") %>' runat="server" ID="DescriptionTextBox" /></td>
                 <td>
                     <asp:TextBox Text='<%# Bind("CurrentPrice") %>' runat="server" ID="CurrentPriceTextBox" /></td>
                 <td>
@@ -63,7 +63,7 @@
                 <td>
                     <asp:TextBox Text='<%# Bind("ItemID") %>' runat="server" ID="ItemIDTextBox" /></td>
                 <td>
-                    <asp:TextBox Text='<%# Bind("FoodDescription") %>' runat="server" ID="FoodDescriptionTextBox" /></td>
+                    <asp:TextBox Text='<%# Bind("Description") %>' runat="server" ID="DescriptionTextBox" /></td>
                 <td>
                     <asp:TextBox Text='<%# Bind("CurrentPrice") %>' runat="server" ID="CurrentPriceTextBox" /></td>
                 <td>
@@ -77,7 +77,7 @@
                 <td>
                     <asp:Label Text='<%# Eval("ItemID") %>' runat="server" ID="ItemIDLabel" /></td>
                 <td>
-                    <asp:Label Text='<%# Eval("FoodDescription") %>' runat="server" ID="FoodDescriptionLabel" /></td>
+                    <asp:Label Text='<%# Eval("Description") %>' runat="server" ID="DescriptionLabel" /></td>
                 <td>
                     <asp:Label Text='<%# Eval("CurrentPrice") %>' runat="server" ID="CurrentPriceLabel" /></td>
                 <td>
@@ -93,7 +93,7 @@
                         <table runat="server" id="itemPlaceholderContainer" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px; font-family: Verdana, Arial, Helvetica, sans-serif;" border="1">
                             <tr runat="server" style="background-color: #E0FFFF; color: #333333;">
                                 <th runat="server">ID</th>
-                                <th runat="server">Food</th>
+                                <th runat="server">Item Served</th>
                                 <th runat="server">$</th>
                                 <th runat="server">Servings</th>
                                 <th runat="server">Category</th>
@@ -118,7 +118,7 @@
                 <td>
                     <asp:Label Text='<%# Eval("ItemID") %>' runat="server" ID="ItemIDLabel" /></td>
                 <td>
-                    <asp:Label Text='<%# Eval("FoodDescription") %>' runat="server" ID="FoodDescriptionLabel" /></td>
+                    <asp:Label Text='<%# Eval("Description") %>' runat="server" ID="DescriptionLabel" /></td>
                 <td>
                     <asp:Label Text='<%# Eval("CurrentPrice") %>' runat="server" ID="CurrentPriceLabel" /></td>
                 <td>
