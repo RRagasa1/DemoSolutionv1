@@ -17,7 +17,7 @@ namespace ChinookSystem.BLL
     public class EmployeeController
     {
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<EmployeeNameList> EmployeeNameList_Get()
+        public List<EmployeeNameList> EmployeeName_Get()
         {
             using (var context = new ChinookContext())
             {
