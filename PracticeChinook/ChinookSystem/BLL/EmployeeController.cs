@@ -17,13 +17,13 @@ namespace ChinookSystem.BLL
     public class EmployeeController
     {
         [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<EmployeeNameList> EmployeeName_Get()
+        public List<EmployeeName> EmployeeNameList_Get()
         {
             using (var context = new ChinookContext())
             {
                 var results = from x in context.Employees
                               orderby x.LastName, x.FirstName
-                              select new EmployeeNameList
+                              select new EmployeeName
                               {
                                   EmployeeId = x.EmployeeId,
                                   Name = x.LastName + ", " + x.FirstName

@@ -9,7 +9,7 @@ return the EmployeeID--%>
     <asp:Button ID="Search" runat="server" Text="Search" />
     <br />
     
-    <asp:DropDownList ID="EmployeeList" runat="server" DataSourceID="EmployeeNameList" DataTextField="EmployeeId" DataValueField="EmployeeId">
+    <asp:DropDownList ID="EmployeeList" runat="server" DataSourceID="EmployeeName" DataTextField="EmployeeId" DataValueField="EmployeeId">
     </asp:DropDownList>
 
     <asp:ObjectDataSource ID="EmployeeNameList" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="EmployeeNameList_Get" TypeName="ChinookSystem.BLL.EmployeeController"></asp:ObjectDataSource>

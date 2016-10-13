@@ -13,5 +13,8 @@ namespace ChinookSystem.Security
 {
     public class ApplicationUser : IdentityUser
     {
+        public int? EmployeeId { get; set; }
+        public int? CustomerID { get; set; }
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ChinookSystem.Data.POCOs
 {
-    public class EmployeeNameList
+    public class EmployeeName
     {
         public int EmployeeId { get; set; }
         public string Name { get; set; }
