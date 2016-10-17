@@ -5,6 +5,9 @@ using System.Web;
 using System;
 using Website;
 
+#region Additional Namespaces for Security
+using eRestaurantSystem.Security;
+#endregion
 //namespace Website
 //{
 //    // You can add User data for the user by adding more properties to your User class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
