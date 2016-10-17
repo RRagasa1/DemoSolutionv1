@@ -9,6 +9,11 @@
     {
         RouteConfig.RegisterRoutes(RouteTable.Routes);
         BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+         var RoleManager = new RoleManager();
+        RoleManager.AddeRestaurantRoles();
+        var UserManager = new UserManager();
+        UserManager.AddWebMaster();
     }
 
 </script>
