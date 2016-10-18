@@ -2,6 +2,7 @@
 <%@ Import Namespace="Website" %>
 <%@ Import Namespace="System.Web.Optimization" %>
 <%@ Import Namespace="System.Web.Routing" %>
+<%@ Import Namespace="eRestaurantSystem.Security" %>
 
 <script runat="server">
 
