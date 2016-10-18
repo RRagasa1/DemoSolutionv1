@@ -18,7 +18,7 @@ namespace eRestaurantSystem.Security
 
         }
 
-        public void AddChinookRoles()
+        public void AddeRestaurantRoles()
         {
             foreach (string rolename in SecurityRoles.eRestaurantSecurityRoles)
             {
