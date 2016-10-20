@@ -40,6 +40,7 @@ namespace ChinookSystem.Security
             }
         }//oem
 
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
 
         public List<RoleProfile> ListAllRoles()
         {
@@ -57,9 +58,11 @@ namespace ChinookSystem.Security
                               RoleName = role.Name,
                               UserNames = role.Users.Select(r => usermgr.FindById(r.UserId).UserName)
                           };
+            return results.ToList();
         }//eom
 
         //add
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
         public void AddRole(RoleProfile role)
         {
             //business logic validation
@@ -69,7 +72,7 @@ namespace ChinookSystem.Security
                 this.Create(new IdentityRole(role.RoleName));
             }
         }
-
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
         //delete
         public void RemoveRole(RoleProfile role)
         {

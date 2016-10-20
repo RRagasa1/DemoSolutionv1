@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Admin_Security_Default" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="Server">
     <div class="row jumbotron">
         <h1>Site Administration</h1>
     </div>
@@ -21,31 +21,41 @@
                 </div>
                 <!--  user tab  -->
                 <div class="tab-pane fade" id="roles">
-                    <asp:ListView ID="RoleListView" runat="server">
+                    <asp:ListView ID="RoleListView" runat="server"
+                        DatasourceID="RoleListViewODS"
+                        InsertItemPosition="LastItem"
+                        ItemType="ChinookSystem.Security.RoleProfile"
+                        DataKeyNames="RoleId"
+                        OnItemDeleted="RefreshAll"
+                        OnItemInserted="RoleListView_ItemInserted">
+
                         <EmptyDataTemplate>
                             <span>No Security roles have been set up.</span>
                         </EmptyDataTemplate>
+
                         <LayoutTemplate>
                             <div class="row bginfo">
                                 <div class="col-sm-3 h4">Action</div>
                                 <div class="col-sm-3 h4">Role</div>
                                 <div class="col-sm-6 h4">Members</div>
                             </div>
+                            <div runat="server" id="itemPlaceHolder"></div>
                         </LayoutTemplate>
+
                         <ItemTemplate>
                             <div class="col-sm-3">
-                                <asp:LinkButton ID="RemoveRole" runat="server" 
+                                <asp:LinkButton ID="RemoveRole" runat="server"
                                     CommandName="Delete">Remove</asp:LinkButton>
                             </div>
                             <div class="col-sm-3">
-                               <%# Item.RoleName %>
+                                <%# Item.RoleName %>
                             </div>
                             <div class="col-sm-6">
                                 <asp:Repeater ID="RoleUserReapter" runat="server"
                                     DataSource="<%# Item.UserNames%>"
                                     ItemType="System.String">
                                     <ItemTemplate>
-                                         <%# Item %>
+                                        <%# Item %>
                                     </ItemTemplate>
                                     <SeparatorTemplate>, </SeparatorTemplate>
                                 </asp:Repeater>
@@ -54,26 +64,40 @@
                         <InsertItemTemplate>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <asp:LinkButton ID="InsertRole" runat="server" 
-                                    CommandName="Insert">Insert</asp:LinkButton>
-                                    <asp:LinkButton ID="CancelButton" runat="server" 
-                                    CommandName="Cancel">Cancel</asp:LinkButton>
+                                    <asp:LinkButton ID="InsertRole" runat="server"
+                                        CommandName="Insert">Insert</asp:LinkButton>
+                                    <asp:LinkButton ID="CancelButton" runat="server"
+                                        CommandName="Cancel">Cancel</asp:LinkButton>
                                 </div>
                                 <div class="col-sm-3">
                                     <asp:TextBox ID="RoleName" runat="server"
-                                        text='<%# BindItem.RoleName %>' 
-                                        placeholder="Role Name"></asp:TextBox>
+                                        Text='<%# BindItem.RoleName %>'
+                                        place ="Role Name"></asp:TextBox>
                                 </div>
                             </div>
                         </InsertItemTemplate>
                     </asp:ListView>
-                    <asp:ObjectDataSource ID="RoleListViewODS" runat="server">
+                    <asp:ObjectDataSource ID="RoleListViewODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="FindByNameAsync" TypeName="ChinookSystem.Security.RoleManager">
 
+                        <SelectParameters>
+                            <asp:Parameter Name="roleName" Type="String"></asp:Parameter>
+                        </SelectParameters>
                     </asp:ObjectDataSource>
                 </div>
-                <!--  user tab  -->
+                <!--  unregistered tab  -->
+                
                 <div class="tab-pane fade" id="unregistered">
-                    <h2>UnRegistered CRUD</h2>
+                    <asp:GridView ID="UnregisteredUsersGridView" runat="server" 
+                        AutoGeneratedColumns="False"
+                        DataSourceID="UnregisteredUsersODS" 
+                        DatakeyNames="Id"
+                        ItemType="ChinookSystem.Security.UnRegisteredUserProfile">
+
+                    </asp:GridView>
+                    <asp:ObjectDataSource ID="UnregisteredUsersODS" runat="server"
+                        TypeName="ChinookSystem.Security.UserManager">
+
+                    </asp:ObjectDataSource>
                 </div>
             </div>
         </div>
