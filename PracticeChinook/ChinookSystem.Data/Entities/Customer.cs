@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 #region Additional Namespaces
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -16,6 +17,7 @@ namespace ChinookSystem.Data.Entities
         public int CustomerId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Company { get; set; }
         public string Address { get; set; }
         public string City { get; set; }
         public string State { get; set; }
@@ -25,15 +27,16 @@ namespace ChinookSystem.Data.Entities
         public string Fax { get; set; }
         public string Email { get; set; }
 
-        //by default, the EntityFramework navigation 
-        //expects foreign keysto have the same name as the parent primary key
-        //if not, you MUST use the foreign key annotation to 
-        //relate the foreign key field to the appropriate navigation property using the property name 
+        //by default the EntityFramework navigation
+        //expects foreign keys to have the same name as the 
+        //parent primary key
+        //if not you MUST use the ForeignKey annotation to
+        //relate the foreign key field to the appropriate
+        //navigation property using the property name
         [ForeignKey("Employee")]
         public int? SupportRepId { get; set; }
 
         public virtual Employee Employee { get; set; }
-
     }
 }
 

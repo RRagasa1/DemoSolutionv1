@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace ChinookSystem.Security
 {
-    public enum UnRegisteredUserType { Undefined, Employee, Customer}
+    public enum UnregisteredUserType { Undefined, Employee, Customer};
     public class UnRegisteredUserProfile
     {
         public int id { get; set; }
-        public UnRegisteredUserType UserType { get; set; }
+        public UnregisteredUserType UserType { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string Lastname { get; set; }
         public string AssignedUserName { get; set; }
         public string AssignedEmail { get; set; }
     }

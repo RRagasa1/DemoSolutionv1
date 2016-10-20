@@ -4,62 +4,49 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-#region Additonal Namespaces
-using System.ComponentModel; //ODS
-using ChinookSystem.Data.Entities;
-using ChinookSystem.Data.POCOs;
-using ChinookSystem.DAL;
+#region Additional Namespaces
+using ChinookSystem.Data.Entities; //entity classes
+using ChinookSystem.Data.POCOs;     //POCOs classes
+using ChinookSystem.DAL;            //context class
+using System.ComponentModel;        //ODS
 #endregion
-
 namespace ChinookSystem.BLL
 {
     [DataObject]
     public class ArtistController
     {
-        //dump the entire artist entity
-        //this will use Entity Framework access 
+        //dump the entire artist table
+        //this will use EntityFramework access
         //Entity classes will be used to define the data
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
+
+        [DataObjectMethod(DataObjectMethodType.Select,false)]
         public List<Artist> Artist_ListAll()
         {
-            //set up transaction area
+            //set up the transaction area
             using (var context = new ChinookContext())
             {
                 return context.Artists.ToList();
             }
         }
 
-        //report a dataset containing data from
-        //   multiple entities
-        //this will use Linq to Entity access 
+        //return a list of artists and all their albums
+        //this will use Linq to Entity data acess
         //POCO classes will be used to define the data
-        [DataObjectMethod(DataObjectMethodType.Select, false)]
-        public List<ArtistAlbums> ArtistAlbums_Get()
+        [DataObjectMethod(DataObjectMethodType.Select,false)]
+        public List<ArtistAlbums> ArtistAlbums_Get(int releaseyear)
         {
-            //set up transaction area
             using (var context = new ChinookContext())
             {
-                //when you bring your query from LinqPad
-                //to your program you must change the
-                //reference(s) to the data source
-
-                //you may also need to change your
-                //navigation referencing use in LinqPad
-                //to the navigation properties you stated
-                //in the Entity class definitions
                 var results = from x in context.Albums
-                              where x.ReleaseYear == 2008
+                              where x.ReleaseYear == releaseyear
                               orderby x.Artist.Name, x.Title
                               select new ArtistAlbums
                               {
-                                  //Name and Title are POCO
-                                  //class property names
                                   Name = x.Artist.Name,
                                   Title = x.Title
                               };
-                //the following requires the query data in memory
-                //.ToList()
-                //At this point the query will actually execute
+                //the .ToList will actually cause the query
+                //to execute
                 return results.ToList();
             }
         }

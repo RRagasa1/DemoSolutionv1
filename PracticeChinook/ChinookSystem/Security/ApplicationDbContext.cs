@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 #region Additional Namespaces
 using Microsoft.AspNet.Identity.EntityFramework;
-#endregion
 
+#endregion
 namespace ChinookSystem.Security
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

@@ -14,7 +14,8 @@
         <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
         <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
     </address>
-    <%-- remember to remove this information prior to going to live production --%>
+
+    <%--remember to remove this information proir to going to live production--%>
     <h3>WebSite Security Users and Passwords</h3>
-    <p>Default website master username: WebMaster&nbsp;&nbsp;password: Pa$$word1</p>
+    <p>Default website master username : WebMaster&nbsp;&nbsp;&nbsp;password : Pa$$word1</p>
 </asp:Content>

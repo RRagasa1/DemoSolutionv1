@@ -9,39 +9,39 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 #endregion
 
-
 namespace ChinookSystem.Data.Entities
-
-
-{   //[Table("sqltablename")]
-    //if you want to put in schem - use dbo
-
-        [Table("Artists")]
+{
+    //[Table("sqltablename")]
+    [Table("Artists")]
     public class Artist
     {
-        //PKey annotations is optional
+        //pkey annotation is optional
         //default assumes identity sql table
-        //default assumes property names ends with ID or Id and sql PKey ends the same
-        //otherwise [Key] is needed
-        //non-identity PKeys, compounds PKeys,PKeys not ending in ID or Id
+        //default assumes property name ends with ID or Id
+        //   and sql pkey ends the same
+        //otherwise [Key] is need
+        //non-identity pkeys, compound pkeys, pkeys not
+        // ending in ID or Id
 
-        //Class properties map to sql table attributes
+        //class properties map to sql table attributes
         //properties should be named the same as table attributes
-        //properties should be in the same order as the table attributes for ease of maintenance
+        //properties should be in the same order as
+        //    table attributes for ease of maintenance
         [Key]
-        public int ArtistID { get; set; }
-        public string Name { get; set; } 
+        public int ArtistId { get; set; }
+        public string Name { get; set; }
 
         //navigation properties for use by Linq
         //use the DB ERD to determine the relationships
 
-        //these properties will be of type virtual 
+        //these properties wqill be of type  virtual
         //there are two types of navigation properties
-            //properties that point to "children" use ICollection<T> as the datatype
-            //properties that point to "parent" use ParentClassName as the datatype
+        //properties that point to "children" 
+        //     use ICollection<T> as the datatype
+        //properties that point to "parent"
+        //     use ParentClassName as the datatype
 
-        public virtual ICollection<Album> Albums { get; set; } //parent to artist
-        public virtual ICollection<MediaType> MediaTypes { get; set; } //parent to artist
+        public virtual ICollection<Album> Albums { get; set; }
 
     }
 }

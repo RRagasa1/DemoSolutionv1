@@ -4,17 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 #region Additional Namespaces
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 #endregion
 
-
 namespace ChinookSystem.Data.Entities
 {
+    //[Table("sqltablename")]
     [Table("Tracks")]
     public class Track
     {
+      
         [Key]
         public int TrackId { get; set; }
         public string Name { get; set; }
@@ -26,13 +28,13 @@ namespace ChinookSystem.Data.Entities
         public int? Bytes { get; set; }
         public decimal UnitPrice { get; set; }
 
-        public virtual Album Album { get; set; } //child to tracks
-
-        //others:
-        //Genre - parent
-        //InvoiceLines - child
-        //PlaylistTracks - child
-
+        //navigation properties
+        public virtual Album Album { get; set; }
+        public virtual MediaType MediaType { get; set;}
+        //Genre parent
+        //InoviceLines children
+        //PlaylistTracks children
+        
     }
-
 }
+

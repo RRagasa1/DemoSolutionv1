@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CEF912A2-ABFF-4235-B1B7-5014213BF8A9}</ProjectGuid>
+    <ProjectGuid>{76781844-A624-4250-BDED-4010A931DE35}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ChinookSystem.Data</RootNamespace>
@@ -49,7 +49,7 @@
     <Compile Include="Entities\MediaType.cs" />
     <Compile Include="Entities\Track.cs" />
     <Compile Include="POCOs\ArtistAlbums.cs" />
-    <Compile Include="POCOs\EmployeeNames.cs" />
+    <Compile Include="POCOs\EmployeeName.cs" />
     <Compile Include="POCOs\RepresentitiveCustomers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

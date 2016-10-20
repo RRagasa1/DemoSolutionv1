@@ -6,13 +6,15 @@ using System.Threading.Tasks;
 
 namespace ChinookSystem.Security
 {
-    public static class SecurityRoles  //one copy per application
+    public static class SecurityRoles
     {
         public const string WebsiteAdmins = "WebsiteAdmins";
         public const string RegisteredUsers = "RegisteredUsers";
         public const string Staff = "Staff";
         public const string Auditor = "Auditor";
-        //property that is readOnly which will return all of the roles in the application
+
+        //property that is readonly whic will return all of the 
+        //roles in the application
         internal static List<string> ChinookSecurityRoles
         {
             get
@@ -23,10 +25,8 @@ namespace ChinookSystem.Security
                 roleList.Add(RegisteredUsers);
                 roleList.Add(Staff);
                 roleList.Add(Auditor);
-
                 return roleList;
             }
         }
-
     }
 }
